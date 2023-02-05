@@ -1,0 +1,16 @@
+body {
+  background: linear-gradient(#9198e5, #F2F7A1);
+}
+
+
+h2 {
+  font-style: italic;
+  font-size: 40px;
+  text-align: center;
+}
+
+.main {
+  font-size: 60px;
+  color: #30799B;
+  margin-top: 200px;
+}
