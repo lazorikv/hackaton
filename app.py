@@ -1,5 +1,6 @@
 from enum import Enum
 from flask import Flask, render_template, request
+from random import randint
 
 application = Flask(__name__, template_folder="templates")
 
@@ -17,13 +18,12 @@ def move_handler(board, player):
         return {"column": column}
     # second watch to our win condition
     column = board_scanner_for_move(board, player, opponent=False)
-    return {"column": column}
+    return {"column": randint(0, 8)}
 
 
 def board_scanner_for_move(board, player, opponent=True):
     # scans board
     ...
-
 
 
 @application.route("/healthz")
@@ -35,9 +35,7 @@ def index():
 def move():
     if request.method == 'POST':
         data = request.data
-        board, player = data['board'], data['player']
-        return move_handler(board, player)
-    return {"message": "Cringe"}
+    return {"column": randint(0, 8)}
 
 
 if __name__ == "__main__":
