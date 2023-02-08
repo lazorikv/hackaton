@@ -1,7 +1,6 @@
 from enum import Enum
 from flask import Flask, render_template, request
 
-
 application = Flask(__name__, template_folder="templates")
 
 
