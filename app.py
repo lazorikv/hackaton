@@ -8,7 +8,7 @@ def index():
     return render_template('heathz.html')
 
 
-@application.route("/move", methods=["POST"])
+@application.route("/move", methods=["POST", "GET"])
 def move():
     if request.method == 'POST':
         data = request.data
