@@ -1,5 +1,4 @@
-from flask import Flask, render_template
-
+from flask import Flask, render_template, request
 
 application = Flask(__name__, template_folder="templates")
 
@@ -7,6 +6,16 @@ application = Flask(__name__, template_folder="templates")
 @application.route("/healthz")
 def index():
     return render_template('heathz.html')
+
+
+@application.route("/move", methods=["POST"])
+def move():
+    if request.method == 'POST':
+        data = request.data
+        print(data)
+    return {
+        "column": 2
+    }
 
 
 if __name__ == "__main__":
